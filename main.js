@@ -155,7 +155,7 @@ function setTextureFromCanvas(canvas) {
 const animate = () => {
     requestAnimationFrame(animate);
     controls.update();
-    model.rotation.y +=0.04;
+    model.rotation.y +=0.005;
     renderer.render(scene, camera);
 };
 

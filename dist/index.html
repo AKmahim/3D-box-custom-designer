@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
+  <script type="module" crossorigin src="/assets/index-393b7b16.js"></script>
+</head>
+<body>
+    <div style="display: flex;padding-right: 20px;">
+        <div style="margin-right: 20px;">
+            <canvas id="fabric-canvas" width="500" height="600" style="border: 2px solid aquamarine;" ></canvas>
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="resizeButton">Resize Image</button>
+            <button id="sendTo3DButton">Send to 3D Model</button>
+        </div>
+    
+        <div id="3d-canvas" >
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
