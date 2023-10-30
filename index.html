@@ -1,23 +1,152 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Image Editor</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
-</head>
-<body>
-    <div style="display: flex;padding-right: 20px;">
-        <div style="margin-right: 20px;">
-            <canvas id="fabric-canvas" width="500" height="600" style="border: 2px solid aquamarine;" ></canvas>
-            <input type="file" id="imageInput" accept="image/*">
-            <button id="resizeButton">Resize Image</button>
-            <button id="sendTo3DButton">Send to 3D Model</button>
-        </div>
-    
-        <div id="3d-canvas" >
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <script type="module" src="main.js"></script>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>3D Box Designer</title>
+    <meta
+      name="description"
+      content="Knight is a beautiful Bootstrap 4 template for product landing pages."
+    />
 
-</body>
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet" />
+
+    <!--vendors styles-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="./yellow.css" id="theme-color" />
+    
+  </head>
+  <body>
+    <!--navigation-->
+    <section class="smart-scroll">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <a class="navbar-brand heading-black" href="index.html">
+            3D Box Designer
+          </a>
+          <button
+            class="navbar-toggler navbar-toggler-right border-0"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span data-feather="grid"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link page-scroll d-flex flex-row align-items-center text-primary"
+                  href="./box-editor.html"
+                >
+                  <em
+                    data-feather="layout"
+                    width="18"
+                    height="18"
+                    class="mr-2"
+                  ></em>
+                  View Box
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!--hero header-->
+    <section class="py-7 py-md-0 bg-hero" id="home">
+      <div class="container">
+        <div class="row vh-md-100">
+          <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+            <h1 class="heading-black text-capitalize type-animation">
+              Endless Possibilities in 3D
+            </h1>
+            
+
+            <p class="lead py-3">
+              Unlocking Your Creative Vision. Explore the infinite potential of
+              3D modeling with our innovative platform. Transform your ideas
+              into stunning 3D creations and bring your imagination to life.
+            </p>
+            <a
+              href="./box-editor.html"
+              class="btn btn-primary d-inline-flex flex-row align-items-center"
+            >
+              Create Now
+              <em class="ml-2" data-feather="arrow-right"></em>
+          </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        const textElement = document.querySelector('.type-animation');
+        const originalText = textElement.innerText;
+        let isTyping = true;
+
+        function typeAndDelete() {
+            if (isTyping) {
+                const text = originalText;
+                textElement.innerText = text.slice(0, textElement.innerText.length + 1);
+                if (textElement.innerText === text) {
+                    isTyping = false;
+                    setTimeout(typeAndDelete, 1000); // Pause before deleting
+                } else {
+                    setTimeout(typeAndDelete, 50); // Adjust the typing speed
+                }
+            } else {
+                const text = originalText;
+                textElement.innerText = text.slice(0, textElement.innerText.length - 1);
+                if (textElement.innerText === "") {
+                    isTyping = true;
+                    setTimeout(typeAndDelete, 1000); // Pause before typing
+                } else {
+                    setTimeout(typeAndDelete, 50); // Adjust the typing speed
+                }
+            }
+        }
+
+        typeAndDelete();
+    </script>
+  </body>
 </html>

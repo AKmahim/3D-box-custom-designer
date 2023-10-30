@@ -96,10 +96,13 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(5, 800 / 600, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(800, 600);
-const canvas = document.getElementById('3d-canvas');
-canvas.appendChild(renderer.domElement);
-// canvas.style.backgroundColor = "transparent";
+renderer.setSize(700, 600);
+const container = document.getElementById('3d-canvas');
+const canvas = renderer.domElement;
+renderer.setClearColor(0xeafaff);
+container.appendChild(canvas);
+canvas.style.backgroundColor = "red";
+
 
 let model; // Create a variable to hold your 3D model
 const fabricCanvas = document.getElementById('fabric-canvas');
@@ -120,15 +123,17 @@ loader.load('/Main.glb', (gltf) => {
     setTextureFromCanvas(fabricCanvas);
 });
 
-camera.position.z = 1;
+// camera.position.z = 1;
+camera.position.set(-0.6, 0, 1);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 scene.add(directionalLight);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, canvas);
 
 // Function to set the texture from Fabric.js canvas
 function setTextureFromCanvas(canvas) {
