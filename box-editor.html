@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html data-theme="dark">
 <head>
     <title>3D BOX Designer</title>
+
+    <!-- ================= fabricjs ================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
+
+    <!-- =============== tailwindcss =================== -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <style>
         input[type="file"] {
             display: none;
@@ -12,12 +20,20 @@
     </style>
 </head>
 <body>
-    <div style="display: flex;padding-right: 20px;">
-        <div style="margin-right: 20px;">
-            <canvas id="fabric-canvas" width="500" height="550" style="border: 2px solid aquamarine;" ></canvas>
-            <label for="imageInput" class="btn btn-neutral mt-4">Upload Image</label>
-            <input class="btn btn-primary " type="file" id="imageInput" accept="image/*">
-            <button id="sendTo3DButton" class="btn bg-[#ffea00]">Upload to 3D Model</button>
+    <div class="flex justify-center">
+        <a href="./index.html" class="btn px-9 text-[#ffea00] mb-4">Home</a>
+    </div>
+    <div style="display: flex;padding-right: 20px;" class="justify-between">
+        <div style="margin-right: 20px;" class="ms-4 rounded-lg">
+            <canvas id="fabric-canvas" width="500" height="550" style="border: 2px solid #ffea00;" class="rounded-lg" ></canvas>
+            
+        </div>
+        <div >
+            <label title="Add Your Images of Box design" for="imageInput" class="btn btn-warning mt-4 text-[29px]"><i class="ri-image-add-fill"></i></label>
+            <input class="btn btn-warning " type="file" id="imageInput" accept="image/*">
+            <br>
+            <br>
+            <button title="Apply Your Design on 3D Box" id="sendTo3DButton" class="btn btn-warning text-[29px]"><i class="ri-git-repository-commits-fill"></i></button>
         </div>
     
         <div id="3d-canvas">

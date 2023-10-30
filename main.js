@@ -99,7 +99,8 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(700, 600);
 const container = document.getElementById('3d-canvas');
 const canvas = renderer.domElement;
-renderer.setClearColor(0xeafaff);
+// renderer.setClearColor(0xeafaff);
+renderer.setClearColor(0xffea00);
 container.appendChild(canvas);
 canvas.style.backgroundColor = "red";
 

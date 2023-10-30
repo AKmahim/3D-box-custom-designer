@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Box texture</title>
+    <style>
+        body {
+            margin: 0;
+            /* overflow: hidden; */
+        }
+        canvas {
+            display: block;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+	<div class="flex justify-between align-center">
+        <a href="index.html" class="btn btn-neutral text-[#ffea00] px-16 mt-4 ms-4">Home</a>
+        <p class="text-center text-[38px] pb-4 1">Upload your Box Image</p>
+    </div>
+    <div class="flex justify-content-between m">
+        <div class="me-4">
+            <div id="fileInputs" class="px-4">
+                <label for="fileInput1" class="btn btn-warning">Right side</label>
+                <input type="file" id="fileInput1" class="" accept="image/*">
+                
+                <label for="fileInput2" class="btn btn-warning">Left Side</label>
+                <input type="file" id="fileInput2" accept="image/*">
+                
+                <label for="fileInput3" class="btn btn-warning">Top side</label>
+                <input type="file" id="fileInput3" accept="image/*">
+                
+                <label for="fileInput4" class="btn btn-warning">Bottom side</label>
+                <input type="file" id="fileInput4" accept="image/*">
+                
+                <label for="fileInput5" class="btn btn-warning">Front side</label>
+                <input type="file" id="fileInput5" accept="image/*">
+                
+                <label for="fileInput6" class="btn btn-warning">Back side</label>
+                <input type="file" id="fileInput6" accept="image/*">
+            </div>
+        
+            <br>
+        
+            <div id="controls" class="px-4">
+                <div>
+                    <label for="widthSlider">Width:</label>
+                    <input type="range" id="widthSlider" min="0.0" max="3" value="1" class="range range-warning" step="0.1" />
+                    <div class="w-full flex justify-between text-xs px-2">
+                    <span>1cm</span>
+                    <span>2cm</span>
+                    <span>3cm</span>
+                    <span>4cm</span>
+                    <span>5cm</span>
+                    </div>
+                </div>
+                <br>
+                
+                <div>
+                    <label for="heightSlider">Height:</label>
+                    <input type="range" id="heightSlider" min="0.1" max="3" value="1.8" class="range range-warning" step="0.1" />
+                    <div class="w-full flex justify-between text-xs px-2">
+                    <span>1cm</span>
+                    <span>2cm</span>
+                    <span>3cm</span>
+                    <span>4cm</span>
+                    <span>5cm</span>
+                    </div>
+                </div>
+                
+                <br>
+                <div>
+                    <label for="depthSlider">Depth:</label>
+                    <input type="range" id="depthSlider" min="0.1" max="3" value="0.6" class="range range-warning" step="0.1" />
+                    <div class="w-full flex justify-between text-xs px-2">
+                    <span>1cm</span>
+                    <span>2cm</span>
+                    <span>3cm</span>
+                    <span>4cm</span>
+                    <span>5cm</span>
+                    </div>
+                </div>
+                <!-- <input type="range" id="depthSlider" min="0.1" max="3" step="0.1" value="1"> -->
+            </div>
+            <div class="flex justify-content-center">
+                <a href="./box-editor.html" target="_blank" class="btn btn-warning mt-10 mx-auto text-center ">Custom logo</a>
+            </div>
+        
+        </div>
+
+
+        <div id="box" class="rounded-lg"></div>
+    </div>
+	
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script> -->
+    <script type="module" src="./upload-texture.js"></script>
+</body>
+</html>

@@ -98,7 +98,8 @@
               into stunning 3D creations and bring your imagination to life.
             </p>
             <a
-              href="./box-editor.html"
+              href="./upload-texture.html"
+              target="_blank"
               class="btn btn-primary d-inline-flex flex-row align-items-center"
             >
               Create Now
@@ -118,7 +119,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
     <script>
         const textElement = document.querySelector('.type-animation');
         const originalText = textElement.innerText;
@@ -127,7 +128,7 @@
         function typeAndDelete() {
             if (isTyping) {
                 const text = originalText;
-                textElement.innerText = text.slice(0, textElement.innerText.length + 1);
+                textElement.innerText = text.slice(0, textElement.innerText.length + 2);
                 if (textElement.innerText === text) {
                     isTyping = false;
                     setTimeout(typeAndDelete, 1000); // Pause before deleting
