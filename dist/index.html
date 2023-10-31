@@ -100,7 +100,8 @@
               into stunning 3D creations and bring your imagination to life.
             </p>
             <a
-              href="./box-editor.html"
+              href="./upload-texture.html"
+              target="_blank"
               class="btn btn-primary d-inline-flex flex-row align-items-center"
             >
               Create Now
@@ -129,7 +130,7 @@
         function typeAndDelete() {
             if (isTyping) {
                 const text = originalText;
-                textElement.innerText = text.slice(0, textElement.innerText.length + 1);
+                textElement.innerText = text.slice(0, textElement.innerText.length + 2);
                 if (textElement.innerText === text) {
                     isTyping = false;
                     setTimeout(typeAndDelete, 1000); // Pause before deleting
