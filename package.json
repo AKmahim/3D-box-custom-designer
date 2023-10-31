@@ -1,7 +1,7 @@
 {
-  "name": "threejs-journey-exercise",
+  "name": "3d-custom-box-designer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "lil-gui": "^0.18.2",
+    "rollup-plugin-copy": "^3.5.0",
     "three": "^0.156.1"
   },
   "devDependencies": {
